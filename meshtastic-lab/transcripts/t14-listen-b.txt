@@ -1,0 +1,1 @@
+$ meshtastic --host localhost:4404 --listen (25 s window)

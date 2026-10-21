@@ -1,0 +1,68 @@
+The lab — two nodes that are not radios
+====================================================================
+
+The lab is software. The Meshtastic firmware
+also builds as an ordinary Linux program
+(meshtasticd, the "Portduino" build), and two
+copies of it ran on the build machine as two
+nodes of a make-believe farm:
+
+    node A   Farmhouse (FARM)   node id !52282ebc
+             API on localhost port 4403
+    node B   Barn (BARN)        node id !200bf9ba
+             API on localhost port 4404
+
+Both ran with no LoRa module configured, so
+each fell back to the firmware's simulated
+radio. The Python command-line client drove
+them over their TCP interfaces. Every quoted
+output in the chapters is a capture from
+that lab; the captures live in
+meshtastic-lab/transcripts/ next to this
+repo's chapters.
+
+Versions, exactly as tested:
+
+    meshtastic (Python CLI)  2.7.11
+    meshtasticd              firmware 2.5.19.f9876cf
+                             (portduino 0.1.0)
+
+The lab's one negative result matters as
+much as its positives: with no real radio
+hardware, the two simulated radios never
+heard each other. Each node's list held only
+itself, a text sent from Farmhouse was never
+received at the Barn, and a direct message
+asking for an acknowledgement ended in a
+NAK, MAX_RETRANSMIT — the firmware's honest
+report that nobody answered. What genuinely
+passed between the two programs was the
+command line: configuration, identity, and
+message *sending* are all real firmware
+behaviour, exercised end to end. Message
+*delivery* between nodes is described in
+the chapters from the project's
+documentation and is listed as
+documented-only in criteria.md.
+
+The transcript index (meshtastic-lab/transcripts/):
+
+    t00  CLI --version
+    t01  CLI --help, the full command surface
+    t02  meshtasticd --version and --help
+    t03  --info against node A, first contact
+    t04  --nodes, node A alone
+    t05  --export-config, node A (private key
+         redacted — see criteria.md)
+    t06  --get of role, region, preset, hops
+    t07  --set-owner Farmhouse / FARM
+    t08  --set lora.region US
+    t09  read-backs proving both changes
+    t10  node B: first --info, owner, region
+    t11  --nodes on A after B started
+    t12  --nodes on B (each still alone)
+    t13  --sendtext broadcast from A
+    t14  --listen on B during that send (empty)
+    t15  direct --sendtext --ack: NAK captured
+    t16  the daemon's HTTPS web server answers
+    t17  daemon startup logs, excerpts

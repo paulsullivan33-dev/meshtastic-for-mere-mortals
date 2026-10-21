@@ -1,0 +1,3 @@
+$ meshtastic --host localhost --sendtext "Testing from the farmhouse"
+Connected to radio
+Sending text message Testing from the farmhouse to ^all on channelIndex:0 

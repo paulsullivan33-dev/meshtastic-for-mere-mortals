@@ -1,0 +1,29 @@
+$ meshtastic --host localhost --set-owner "Farmhouse" --set-owner-short "FARM"
+ERROR file:tcp_interface.py _writeBytes line:137 Socket send error, reconnecting: [Errno 32] Broken pipe
+ERROR file:stream_interface.py __reader line:221 Error while handling message from radio [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/home/hatch/workspace/meshtastic-build/venv/lib/python3.12/site-packages/meshtastic/stream_interface.py", line 219, in __reader
+    self._handleFromRadio(self._rxBuf[HEADER_LEN:])
+  File "/home/hatch/workspace/meshtastic-build/venv/lib/python3.12/site-packages/meshtastic/mesh_interface.py", line 1368, in _handleFromRadio
+    self._handleConfigComplete()
+  File "/home/hatch/workspace/meshtastic-build/venv/lib/python3.12/site-packages/meshtastic/mesh_interface.py", line 1294, in _handleConfigComplete
+    self._connected()  # Tell everyone else we are ready to go
+    ^^^^^^^^^^^^^^^^^
+  File "/home/hatch/workspace/meshtastic-build/venv/lib/python3.12/site-packages/meshtastic/mesh_interface.py", line 1190, in _connected
+    self._startHeartbeat()
+  File "/home/hatch/workspace/meshtastic-build/venv/lib/python3.12/site-packages/meshtastic/mesh_interface.py", line 1181, in _startHeartbeat
+    callback()  # run our periodic callback now, it will make another timer if necessary
+    ^^^^^^^^^^
+  File "/home/hatch/workspace/meshtastic-build/venv/lib/python3.12/site-packages/meshtastic/mesh_interface.py", line 1179, in callback
+    self.sendHeartbeat()
+  File "/home/hatch/workspace/meshtastic-build/venv/lib/python3.12/site-packages/meshtastic/mesh_interface.py", line 1168, in sendHeartbeat
+    self._sendToRadio(p)
+  File "/home/hatch/workspace/meshtastic-build/venv/lib/python3.12/site-packages/meshtastic/mesh_interface.py", line 1243, in _sendToRadio
+    self._sendToRadioImpl(toRadio)
+  File "/home/hatch/workspace/meshtastic-build/venv/lib/python3.12/site-packages/meshtastic/stream_interface.py", line 137, in _sendToRadioImpl
+    self._writeBytes(header + b)
+  File "/home/hatch/workspace/meshtastic-build/venv/lib/python3.12/site-packages/meshtastic/tcp_interface.py", line 135, in _writeBytes
+    self.socket.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+Connected to radio
+Setting device owner to Farmhouse and short name to FARM

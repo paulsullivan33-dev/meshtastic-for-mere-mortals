@@ -1,0 +1,18 @@
+$ meshtastic --host localhost --info (head)
+Connected to radio
+
+Owner: Farmhouse (FARM)
+My info: { "myNodeNum": 1378365116, "minAppVersion": 30200, "pioEnv": "native", "rebootCount": 0, "deviceId": "", "firmwareEdition": "VANILLA", "nodedbCount": 0 }
+Metadata: { "firmwareVersion": "2.5.19.f9876cf", "deviceStateVersion": 23, "hasWifi": true, "positionFlags": 811, "hwModel": "PORTDUINO", "hasPKC": true, "excludedModules": 5376, "canShutdown": false, "hasBluetooth": false, "hasEthernet": false, "role": "CLIENT", "hasRemoteHardware": false }
+
+Nodes in mesh: {
+  "!52282ebc": {
+
+$ meshtastic --host localhost --export-config | grep -A6 "lora:"
+  lora:
+    hopLimit: 3
+    region: US
+    sx126xRxBoostedGain: true
+    txEnabled: true
+    txPower: 30
+    usePreset: true

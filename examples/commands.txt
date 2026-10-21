@@ -1,0 +1,48 @@
+Meshtastic commands — the cheat sheet
+====================================================================
+Every command below is quoted from the CLI's
+own --help (transcript t01) or was run against
+the lab (criteria.md keeps the ledger). Serial
+connections use the same flags without --host.
+
+See the node you are talking to
+    meshtastic --info
+    meshtastic --host HOSTNAME --info      (a node on TCP)
+    meshtastic --nodes                     (the node list)
+    meshtastic --nodes --sort last_heard
+
+Names
+    meshtastic --set-owner "Long Name"
+    meshtastic --set-owner-short AB12      (four characters)
+
+Radio settings (chapter 7)
+    meshtastic --get lora.region
+    meshtastic --set lora.region US        (use YOUR region)
+    meshtastic --get lora.modem_preset
+    meshtastic --get lora.hop_limit
+    meshtastic --get device.role
+
+Whole configuration
+    meshtastic --export-config             (YAML; includes the
+                                            node's private key —
+                                            guard the output)
+    meshtastic --qr                        (channel QR as text)
+
+Messages (chapter 4)
+    meshtastic --sendtext "text"                     broadcast
+    meshtastic --sendtext "text" --dest '!1234abcd'  one node
+    meshtastic --sendtext "text" --ack     wait for an ack
+    meshtastic --listen                    print what arrives
+    meshtastic --traceroute '!1234abcd'    the path a packet takes
+
+Channels (from --help; not run in the lab)
+    meshtastic --ch-add NAME --ch-set psk random
+    meshtastic --ch-del INDEX
+    meshtastic --ch-set-url URL            (apply a shared link)
+    meshtastic --ch-longfast               (preset shortcuts:
+             --ch-longslow, --ch-mediumfast, and kin)
+
+Housekeeping
+    meshtastic --reboot
+    meshtastic --shutdown
+    meshtastic --factory-reset

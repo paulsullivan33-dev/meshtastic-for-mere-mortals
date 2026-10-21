@@ -1,0 +1,68 @@
+$ meshtasticd -c lab-a/config.yaml -d lab-a/fsdir -h 1   (node A startup, log excerpt)
+Portduino is starting, VFS root at /home/hatch/workspace/meshtastic-build/lab-a/fsdir
+Set up Meshtastic on Portduino...
+Using /home/hatch/workspace/meshtastic-build/lab-a/config.yaml as config file
+MAC ADDRESS: 80:00:00:00:00:01
+INFO  | 22:27:19 0 
+
+//\ E S H T /\ S T / C
+
+INFO  | 22:27:19 0 No I2C device configured, Skip
+INFO  | 22:27:19 0 No I2C devices found
+INFO  | 22:27:19 0 S:B:37,2.5.19.f9876cf
+INFO  | 22:27:19 0 Build timestamp: 1736948467
+INFO  | 22:27:19 0 Init NodeDB
+/home/hatch/workspace/meshtastic-build/lab-a/fsdir/prefs/db.proto does not exist
+ERROR | 22:27:19 0 Could not open / read /prefs/db.proto
+WARN  | 22:27:19 0 Devicestate 0 is old, discard
+INFO  | 22:27:19 0 Install default DeviceState
+/home/hatch/workspace/meshtastic-build/lab-a/fsdir/prefs/config.proto does not exist
+ERROR | 22:27:19 0 Could not open / read /prefs/config.proto
+INFO  | 22:27:19 0 Install default LocalConfig
+INFO  | 22:27:19 0 Set default channel and radio preferences!
+INFO  | 22:27:19 0 Wanted region 0, using UNSET
+/home/hatch/workspace/meshtastic-build/lab-a/fsdir/prefs/module.proto does not exist
+ERROR | 22:27:19 0 Could not open / read /prefs/module.proto
+INFO  | 22:27:19 0 Install default ModuleConfig
+/home/hatch/workspace/meshtastic-build/lab-a/fsdir/prefs/channels.proto does not exist
+ERROR | 22:27:19 0 Could not open / read /prefs/channels.proto
+INFO  | 22:27:19 0 Install default ChannelFile
+/home/hatch/workspace/meshtastic-build/lab-a/fsdir/prefs/uiconfig.proto does not exist
+ERROR | 22:27:19 0 Could not open / read /prefs/uiconfig.proto
+INFO  | 22:27:19 0 Adding node to database with 1 nodes and 4294967295 bytes free!
+INFO  | 22:27:19 0 Generate new PKI keys
+INFO  | 22:27:19 0 Set default channel and radio preferences!
+INFO  | 22:27:19 0 Wanted region 0, using UNSET
+INFO  | 22:27:19 0 Save /prefs/config.proto
+INFO  | 22:27:19 0 Save /prefs/channels.proto
+/prefs/db.proto does not exists or is directory
+INFO  | 22:27:19 0 Save /prefs/db.proto
+Portduino critical error: Failed to open posix file /dev/spidev0.0, errno=2
+No hardware spi chip found...
+/home/hatch/workspace/meshtastic-build/lab-a/fsdir/prefs/cannedConf.proto does not exist
+ERROR | 22:27:19 0 Could not open / read /prefs/cannedConf.proto
+INFO  | 22:27:19 0 CannedMessageModule is enabled
+INFO  | 22:27:19 0 External Notification Module Disabled
+INFO  | 22:27:19 0 Start meshradio init
+INFO  | 22:27:19 0 Radio freq=906.875, config.lora.frequency_offset=0.000
+INFO  | 22:27:19 0 Set radio: region=UNSET, name=LongFast, config=0, ch=19, power=30
+INFO  | 22:27:19 0 myRegion->freqStart -> myRegion->freqEnd: 902.000000 -> 928.000000 (26.000000 MHz)
+INFO  | 22:27:19 0 numChannels: 104 x 250.000kHz
+INFO  | 22:27:19 0 channel_num: 20
+INFO  | 22:27:19 0 frequency: 906.875000
+INFO  | 22:27:19 0 Slot time: 77 msec
+INFO  | 22:27:19 0 Use SIMULATED radio!
+ERROR | 22:27:19 0 Error reading File : certificate.pem 
+ERROR | 22:27:19 0 ERROR SSL Certificate File can't be loaded or is missing
+... (admin traffic from the CLI sessions in t03-t09 elided) ...
+INFO  | 22:29:00 101 [Router] Reboot in 7 seconds
+INFO  | 22:29:00 101 [Router] Wanted region 1, using US
+INFO  | 22:29:00 101 [Router] Wanted region 1, using US
+
+$ meshtasticd -c lab-b/config.yaml -d lab-b/fsdir -h 2 -p 4404   (node B, selected lines)
+MAC ADDRESS: 80:00:00:00:00:02
+INFO  | 22:29:15 0 Use SIMULATED radio!
+ERROR | 22:29:15 0 Error starting Web Server framework, error number: 4
+INFO  | 22:29:15 0 API server listen on TCP port 4404
+MAC ADDRESS: 80:00:00:00:00:02
+INFO  | 22:29:53 0 Use SIMULATED radio!

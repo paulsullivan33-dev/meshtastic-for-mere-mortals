@@ -1,0 +1,4 @@
+$ curl -sk -o /dev/null -w "%{http_code} %{content_type} %{size_download} bytes\n" https://localhost:443/
+404  14 bytes
+$ curl -sk https://localhost:443/ | head -c 300
+File not found

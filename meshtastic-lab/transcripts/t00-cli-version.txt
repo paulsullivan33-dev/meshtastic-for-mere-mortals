@@ -1,0 +1,7 @@
+$ meshtastic --version
+2.7.11
+
+$ pip show meshtastic | head -3
+Name: meshtastic
+Version: 2.7.11
+Summary: Python API & client shell for talking to Meshtastic devices

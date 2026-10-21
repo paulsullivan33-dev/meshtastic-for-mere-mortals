@@ -1,0 +1,6 @@
+$ meshtastic --host localhost --sendtext "Barn, do you copy?" --dest "!200bf9ba" --ack
+Connected to radio
+Sending text message Barn, do you copy? to !200bf9ba on channelIndex:0 
+Waiting for an acknowledgment from remote node (this could take a while)
+Received a NAK, error reason: MAX_RETRANSMIT
+(exit 0 — timed out waiting for an ack that cannot come)

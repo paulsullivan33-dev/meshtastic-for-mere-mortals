@@ -1,0 +1,14 @@
+$ meshtastic --host localhost:4404 --info (head)
+Connected to radio
+
+Owner: Meshtastic f9ba (f9ba)
+My info: { "myNodeNum": 537655738, "minAppVersion": 30200, "pioEnv": "native", "rebootCount": 0, "deviceId": "", "firmwareEdition": "VANILLA", "nodedbCount": 0 }
+Metadata: { "firmwareVersion": "2.5.19.f9876cf", "deviceStateVersion": 23, "hasWifi": true, "positionFlags": 811, "hwModel": "PORTDUINO", "hasPKC": true, "excludedModules": 5376, "canShutdown": false, "hasBluetooth": false, "hasEthernet": false, "role": "CLIENT", "hasRemoteHardware": false }
+
+$ meshtastic --host localhost:4404 --set-owner "Barn" --set-owner-short "BARN"
+Setting device owner to Barn and short name to BARN
+
+$ meshtastic --host localhost:4404 --set lora.region US
+Set lora.region to US
+Writing modified preferences to device
+Writing lora configuration to device

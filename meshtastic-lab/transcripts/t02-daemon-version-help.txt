@@ -1,0 +1,20 @@
+$ meshtasticd --version
+portduino 0.1.0
+
+$ meshtasticd --help
+Usage: meshtasticd [OPTION...] ... ...
+An application written with porduino
+
+  -c, --config=CONFIG_PATH   Full path of the .yaml config file to use.
+  -d, --fsdir=DIR            The directory to use as the virtual filesystem
+  -e, --erase                Erase virtual filesystem before use
+  -h, --hwid=HWID            The mac address to assign to this virtual machine
+  -p, --port=PORT            The TCP port to use.
+  -?, --help                 Give this help list
+      --usage                Give a short usage message
+  -V, --version              Print program version
+
+Mandatory or optional arguments to long options are also mandatory or optional
+for any corresponding short options.
+
+Report bugs to https://github.com/meshtastic/Meshtastic-device.

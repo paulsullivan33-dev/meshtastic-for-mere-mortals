@@ -1,0 +1,20 @@
+### Lab config for node A - no LoRa module is defined anywhere,
+### so the daemon falls back to its simulated radio.
+###
+### This is the exact file node A ran with in chapter 9, copied
+### from the lab. ConfigDirectory points inside the lab folder;
+### on a real install it is /etc/meshtasticd/config.d/. The
+### shipped default config (in /etc/meshtasticd/config.yaml)
+### also carries commented examples for real radios — sx1262,
+### sx1268, sx1280, RF95 and others — under a Lora: heading.
+### Uncommenting one is how a daemon gets a real radio.
+###
+### Run it with:
+###   meshtasticd -c config.yaml -d ./fsdir -h 1
+### (-d is the state directory, -h the hardware id; a second
+###  instance needs its own -d, its own -h, and -p 4404.)
+Logging:
+  LogLevel: info
+General:
+  MaxNodes: 200
+  ConfigDirectory: /home/hatch/workspace/meshtastic-build/lab-a/config.d/
