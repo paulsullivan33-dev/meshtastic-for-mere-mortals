@@ -124,3 +124,19 @@ radio required. The transcripts the
 chapters quote live in
 `meshtastic-lab/transcripts/`; the lab's
 own notes are `examples/lab-notes.txt`.
+
+---
+
+## Part of the series
+
+This guide is one of the [For Mere Mortals](https://paulsullivan33-dev.github.io/mere-mortals/) guides: plain-language guides to the tools programmers and makers use.
+
+Related guides:
+
+- [Ham Radio for Mere Mortals](https://paulsullivan33-dev.github.io/ham-radio-for-mere-mortals/)
+- [RTL-SDR for Mere Mortals](https://paulsullivan33-dev.github.io/rtl-sdr-for-mere-mortals/)
+- [ESPHome for Mere Mortals](https://paulsullivan33-dev.github.io/esphome-for-mere-mortals/)
+
+## License
+
+The writing in this guide is licensed under [CC BY 4.0](https://github.com/paulsullivan33-dev/meshtastic-for-mere-mortals/blob/main/LICENSE). Code examples and lab scripts are licensed under the [MIT License](https://github.com/paulsullivan33-dev/meshtastic-for-mere-mortals/blob/main/LICENSE-CODE).
